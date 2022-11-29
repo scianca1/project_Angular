@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table text-center ">
     <thead >
         <tr>
             <th >Img</th>
@@ -7,16 +7,25 @@
             <th>color</th>
             <th>categoria</th>
             <th>Stock</th>
+            <th></th>
         </tr>
     </thead>
     <tbody class="table-group-divider" >
         <tr *ngFor="let product of products"[ngClass]="{'enoferta':product.enoferta}" >
-            <th><img [src]="product.Img" [alt]="product.Producto"></th>
+            <th><img width="110" [src]="product.Img" [alt]="product.Producto"></th>
             <th>{{product.Producto}}</th>
             <th>{{product.Talle}}</th>
             <th>{{product.color}}</th>
             <th>{{product.categoria}}</th>
             <th ><span class="btn btn-dark" *ngIf="product.stock==0">Sin stock</span><span  *ngIf="product.stock!=0">Displonible</span></th>
+            <th><span *ngIf="product.stock!=0">
+              <div class="input-group mb-3">
+                <button class="btn btn-dark" type="button" (click)="decrementar(product)">-</button>
+                <input type="text" style="width : 10px" class="form-control" placeholder="Rellenar" [(ngModel)]="product.cantidad" (keyup)="cambiarcantidad($event,product)">
+                <button class="btn btn-dark" type="button"(click)="incrementar(product)">+</button>
+              </div>
+            </span></th>
+            
         </tr>
       
     </tbody>
