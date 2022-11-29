@@ -1,0 +1,23 @@
+<table class="table">
+    <thead >
+        <tr>
+            <th >Img</th>
+            <th >Producto</th>
+            <th>Talle</th>
+            <th>color</th>
+            <th>categoria</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider" >
+        <tr *ngFor="let product of products"[ngClass]="{'enoferta':product.enoferta}" >
+            <th><img [src]="product.Img" [alt]="product.Producto"></th>
+            <th>{{product.Producto}}</th>
+            <th>{{product.Talle}}</th>
+            <th>{{product.color}}</th>
+            <th>{{product.categoria}}</th>
+            <th ><span class="btn btn-dark" *ngIf="product.stock==0">Sin stock</span><span  *ngIf="product.stock!=0">Displonible</span></th>
+        </tr>
+      
+    </tbody>
+</table>
