@@ -1,0 +1,7 @@
+<span >
+    <div class="input-group mb-3">
+      <button class="btn btn-dark" type="button" (click)="decrementar()">-</button>
+      <input type="text" style="width : 10px" class="form-control" placeholder="Rellenar" [(ngModel)]="cantidad" (keyup)="cambiarcantidad($event)">
+      <button class="btn btn-dark" type="button"(click)="incrementar()">+</button>
+    </div>
+  </span>

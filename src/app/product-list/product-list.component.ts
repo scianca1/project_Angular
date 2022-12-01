@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductfavoritesService } from '../productfavorites.service';
 import { Product } from './Product';
 
 @Component({
@@ -34,31 +35,24 @@ export class ProductListComponent implements OnInit {
     "stock":0,
     "enoferta": true,
     "cantidad":0,
-  }]
-  constructor() { }
+  }];
+  
+  constructor(private favorites:ProductfavoritesService) { 
+    
+  }
 
   ngOnInit(): void {
   }
-  decrementar(Product: Product):void{
+  addfavorites(Product:Product):void {
     if(Product.cantidad>0){
-      Product.cantidad--;
+    this.favorites.addfavorites(Product);
+    Product.stock-=Product.cantidad;
+    Product.cantidad=0;
     }
   }
-  incrementar(Product: Product):void{
-    if(Product.cantidad<Product.stock){
-      Product.cantidad++;
-    }
+  maxChange(mensaje:String){
+    alert(mensaje);
   }
-  cambiarcantidad(event: KeyboardEvent,Product: Product):void{
-      if(parseInt(event.key)<=9 && parseInt(event.key)>=0){
-        if (Product.cantidad<Product.stock){
-          console.log(event);
-        }
-        else{
-          event.preventDefault();
 
-        }
-      }
-  }
 
 }

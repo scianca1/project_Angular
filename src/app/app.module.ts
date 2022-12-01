@@ -9,6 +9,7 @@ import { PumaHomeComponent } from './puma-home/puma-home.component';
 import { PumaAboutComponent } from './puma-about/puma-about.component';
 import { PumaFavoritesComponent } from './puma-favorites/puma-favorites.component';
 import { PumaContactosComponent } from './puma-contactos/puma-contactos.component';
+import { InputNumberComponent } from './input-number/input-number.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { PumaContactosComponent } from './puma-contactos/puma-contactos.componen
     PumaAboutComponent,
     PumaFavoritesComponent,
     PumaContactosComponent,
+    InputNumberComponent,
     
   ],
   imports: [

@@ -5,27 +5,21 @@
             <th >Producto</th>
             <th>Talle</th>
             <th>color</th>
-            <th>categoria</th>
             <th>Stock</th>
             <th></th>
+            <th>Favoritos</th>
         </tr>
     </thead>
     <tbody class="table-group-divider" >
-        <tr *ngFor="let product of products"[ngClass]="{'enoferta':product.enoferta}" >
+        <tr *ngFor="let product of products "[ngClass]="{'enoferta':product.enoferta}" >
             <th><img width="110" [src]="product.Img" [alt]="product.Producto"></th>
             <th>{{product.Producto}}</th>
             <th>{{product.Talle}}</th>
             <th>{{product.color}}</th>
-            <th>{{product.categoria}}</th>
-            <th ><span class="btn btn-dark" *ngIf="product.stock==0">Sin stock</span><span  *ngIf="product.stock!=0">Displonible</span></th>
-            <th><span *ngIf="product.stock!=0">
-              <div class="input-group mb-3">
-                <button class="btn btn-dark" type="button" (click)="decrementar(product)">-</button>
-                <input type="text" style="width : 10px" class="form-control" placeholder="Rellenar" [(ngModel)]="product.cantidad" (keyup)="cambiarcantidad($event,product)">
-                <button class="btn btn-dark" type="button"(click)="incrementar(product)">+</button>
-              </div>
-            </span></th>
             
+            <th ><span class="btn btn-dark" *ngIf="product.stock==0">Sin stock</span><span class="disponible" *ngIf="product.stock!=0">Displonible</span></th>
+            <th><app-input-number [(cantidad)]="product.cantidad" [max]="product.stock" *ngIf="product.stock!=0" (maxChange)="maxChange($event)"></app-input-number></th>
+            <th><button class="btn btn-primary" (click)="addfavorites(product)" *ngIf="product.stock!=0">Agregar</button></th>
         </tr>
       
     </tbody>

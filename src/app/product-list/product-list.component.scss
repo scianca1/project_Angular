@@ -1,11 +1,14 @@
-.btn,btn-dark:hover{
- cursor:auto;
- background-color: #212529;
-}
+
 .enoferta{
     background: lightgreen;
 }
 .masmenos:hover{
     cursor: pointer;
     background-color: aqua;
+}
+.disponible{
+    background-color: green;
+    border-radius: 0.375rem;
+    padding: 5%;
+    color: black;
 }

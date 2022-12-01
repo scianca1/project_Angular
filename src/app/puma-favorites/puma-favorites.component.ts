@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, observable } from 'rxjs';
+import { Product } from '../product-list/Product';
+import { ProductfavoritesService } from '../productfavorites.service';
 
 @Component({
   selector: 'app-puma-favorites',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PumaFavoritesComponent implements OnInit {
 
-  constructor() { }
+  favoritesList$: Observable<Product[]>;
+  constructor(private favorites:ProductfavoritesService) { 
+    // favorites.favoritesList.subscribe((observable)=>this.favoritesList=observable);
+    this.favoritesList$= favorites.favoritesList.asObservable();
+  }
 
   ngOnInit(): void {
   }
