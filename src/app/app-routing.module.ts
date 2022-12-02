@@ -14,10 +14,7 @@ const routes: Routes = [
     path:'home',
    component:PumaHomeComponent
   },
-  {
-    path:'About',
-   component:PumaAboutComponent
-  },
+ 
   {
     path:'contactos',
    component:PumaContactosComponent

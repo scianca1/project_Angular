@@ -8,6 +8,7 @@ import { Product } from '../product-list/Product';
 export class InputNumberComponent implements OnInit {
 
   constructor() {}
+  
   @Input() 
   cantidad: number;
   @Input() 
@@ -22,7 +23,7 @@ export class InputNumberComponent implements OnInit {
     if(this.cantidad>0){
       this.cantidad--;
       this.cantidadChange.emit(this.cantidad);
-    }
+      }
   }
   incrementar():void{
     if(this.cantidad<this.max){

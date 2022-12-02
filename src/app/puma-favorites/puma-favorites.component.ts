@@ -13,7 +13,7 @@ export class PumaFavoritesComponent implements OnInit {
   favoritesList$: Observable<Product[]>;
   constructor(private favorites:ProductfavoritesService) { 
     // favorites.favoritesList.subscribe((observable)=>this.favoritesList=observable);
-    this.favoritesList$= favorites.favoritesList.asObservable();
+    this.favoritesList$= this.favorites.favoritesList.asObservable();
   }
 
   ngOnInit(): void {

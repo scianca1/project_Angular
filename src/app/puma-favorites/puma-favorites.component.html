@@ -1,6 +1,14 @@
-<p>Lista de favoritos</p>
-<ul>
-    <li *ngFor="let p of favoritesList$|async">
-     {{p.Producto}} : {{p.cantidad}}
+
+<div class="favoritos">
+
+<ul class="list-group">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+        <h3>Lista de favoritos</h3>
     </li>
-</ul>
+    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let p of favoritesList$|async">
+        {{p.Producto}}
+      <span class="badge bg-primary rounded-pill">{{p.cantidad}}</span>
+    </li>
+    
+  </ul>
+</div>

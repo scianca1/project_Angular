@@ -1,5 +1,5 @@
 export interface Product{
-Img:String;
+img:String;
 Producto:String;
 Talle:number;
 color:String;

@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+    background-color:rgb(102 6 255);
+    position: relative;
+    min-height: 100vh;
+}
+footer{
+    text-align: center;
+    // margin-top: 10%;
+    background-color: rgb(14, 12, 12);
+    position:absolute;
+    bottom: 0%;
+    width:100%;
+    
+}
